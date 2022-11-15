@@ -19,7 +19,8 @@ class MovieDetailViewController: UIViewController {
     var posterPath = String()
     var backdropPath = String()
     var movieViewModel = MovieViewModel()
-    let movieAPI = MovieAPI()
+    let movieDataProvider = MovieDataProvider()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let movie = movieViewModel.movie {
@@ -32,31 +33,36 @@ class MovieDetailViewController: UIViewController {
         }
         posterUIImageView.layer.cornerRadius = 20
         addReviewButton.layer.cornerRadius = 20
+        
         addReviewButton.addTarget(self, action: #selector(addReviewButtonTapped), for: .touchUpInside)
-
-        let posterUrl = URL(string: "https://image.tmdb.org/t/p/w185\(posterPath)")
-        let backdropUrl = URL(string: "https://image.tmdb.org/t/p/w780\(backdropPath)")
-
-
-        movieAPI.fetchImage(url: posterUrl!) { data in
-               if data != nil {
-                   DispatchQueue.main.async {
-                       self.posterUIImageView.image = UIImage(data: data!)
-                       print("Image will be displayed")
-                   }
-               }
-        }
-        movieAPI.fetchImage(url: backdropUrl){
-            data in
-                   if data != nil {
-                       DispatchQueue.main.async {
-                           self.backDropUIImageView.image = UIImage(data: data!)
-                           print("Image will be displayed")
-                       }
-                   }
-        }
+        fetchDetailImages()
         
     }
+    
+    // MARK: Private
+    
+    private func fetchDetailImages() -> Void {
+        let posterUrl = URL(string: "https://image.tmdb.org/t/p/w185\(posterPath)")
+        
+        movieDataProvider.fetchImage(url: posterUrl!) { data in
+            if data != nil {
+                DispatchQueue.main.async {
+                    self.posterUIImageView.image = UIImage(data: data!)
+                }
+            }
+        }
+        
+        let backdropUrl = URL(string: "https://image.tmdb.org/t/p/w780\(backdropPath)")
+        movieDataProvider.fetchImage(url: backdropUrl){ data in
+            if data != nil {
+                DispatchQueue.main.async {
+                    self.backDropUIImageView.image = UIImage(data: data!)
+                }
+            }
+        }
+    }
+    
+    // MARK: Selectors
     @objc func addReviewButtonTapped() {
         let movieReviewViewController = self.storyboard?.instantiateViewController(withIdentifier: "MovieReviewViewController") as! MovieReviewViewController
         movieReviewViewController.movieViewModel = movieViewModel

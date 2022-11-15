@@ -11,8 +11,9 @@ import UIKit
 class JournalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var journalTableView: UITableView!
+    
     var movieReviews = [MovieReviewItem]()
-    var movieAPI = MovieAPI()
+    var movieDataProvider = MovieDataProvider()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -23,6 +24,8 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         getAllItems()
     }
     
+    // MARK: - UITableViewDelegate
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         movieReviews.count
     }
@@ -31,9 +34,15 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalEntryTableViewCell") as! JournalEntryTableViewCell
         let movieReview = movieReviews[indexPath.row]
         cell.movieReview = movieReview
-        if let moviePosterPath = movieReview.moviePosterPath {
+        fetchCellImages(cell: cell)
+        return cell
+    }
+    
+    // MARK: Private
+    func fetchCellImages(cell: JournalEntryTableViewCell) -> Void {
+        if let moviePosterPath = cell.movieReview.moviePosterPath {
             let posterUrl = URL(string: "https://image.tmdb.org/t/p/w185\(moviePosterPath)")
-            movieAPI.fetchImage(url: posterUrl!) { data in
+            movieDataProvider.fetchImage(url: posterUrl!) { data in
                    if data != nil {
                        DispatchQueue.main.async {
                            cell.moviePosterUIImageView.image = UIImage(data: data!)
@@ -42,10 +51,11 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
             }
         }
        
-        return cell
     }
     
-    func getAllItems() {
+    // MARK: MovieReviewItem - CoreData
+    
+     func getAllItems() {
         do {
             movieReviews = try context.fetch(MovieReviewItem.fetchRequest())
         }
@@ -53,7 +63,8 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
             print("Movie reviews could not be retrieved")
         }
     }
-    func createItem(title: String, score: Int, review: String, posterPath: String) {
+    
+     func createItem(title: String, score: Int, review: String, posterPath: String) {
         let newItem = MovieReviewItem(context: context)
         newItem.movieTitle = title
         newItem.movieScore = Int16(score)
@@ -67,7 +78,8 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
     }
-    func deleteItem(item: MovieReviewItem) {
+    
+     func deleteItem(item: MovieReviewItem) {
         context.delete(item)
         do {
             try context.save()
@@ -76,17 +88,4 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
     }
-    func updateItem(item: MovieReviewItem, title: String, score: Int, review: String, posterPath: String) {
-        item.movieTitle = title
-        item.movieScore = Int16(score)
-        item.movieReview = review
-        item.moviePosterPath = posterPath
-        
-        do {
-            try context.save()
-        } catch {
-            print("Movie review could not be added")
-        }
-    }
-    
 }

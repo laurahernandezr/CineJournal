@@ -19,15 +19,17 @@ class MovieReviewViewController: UIViewController {
         super.viewDidLoad()
         movieTitleLabel.text = movieViewModel.movie?.movieTitle
         reviewUITextView.layer.cornerRadius = 20
+        reviewUITextView.text = nil
         addToJournalButton.addTarget(self, action: #selector(addToJournalButtonPressed), for: .touchUpInside)
     }
     
+    // MARK: Selectors
     @objc func addToJournalButtonPressed() {
-        let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: "JournalViewController") as! JournalViewController
+        let journalViewController = self.storyboard?.instantiateViewController(withIdentifier: "JournalViewController") as! JournalViewController
         if let movieTitle = self.movieViewModel.movie?.movieTitle,
            let posterPath = self.movieViewModel.movie?.posterPath {
-            detailsVC.createItem(title: movieTitle, score: scoreUIControl.selectedSegmentIndex, review: reviewUITextView.text, posterPath: posterPath)
+            journalViewController.createItem(title: movieTitle, score: scoreUIControl.selectedSegmentIndex, review: reviewUITextView.text, posterPath: posterPath)
         }
-        self.navigationController?.pushViewController(detailsVC, animated: true)
+        self.navigationController?.pushViewController(journalViewController, animated: true)
     }
 }
