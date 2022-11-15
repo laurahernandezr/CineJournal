@@ -26,6 +26,9 @@
 		9E1D570A292382F5001E50FE /* JournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1D5709292382F5001E50FE /* JournalEntryViewController.swift */; };
 		9E1D570D29238373001E50FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E1D570B29238373001E50FE /* Main.storyboard */; };
 		9E1D5710292383B1001E50FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E1D570E292383B1001E50FE /* LaunchScreen.storyboard */; };
+		9E1D571429238550001E50FE /* MovieReviewItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1D571229238550001E50FE /* MovieReviewItem+CoreDataClass.swift */; };
+		9E1D571529238550001E50FE /* MovieReviewItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1D571329238550001E50FE /* MovieReviewItem+CoreDataProperties.swift */; };
+		9E1D57192923889C001E50FE /* MovieReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1D57182923889C001E50FE /* MovieReviewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		9E1D5709292382F5001E50FE /* JournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryViewController.swift; sourceTree = "<group>"; };
 		9E1D570C29238373001E50FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../CineJournal/daffy-typeahead-project/DaffyTypeaheadProject/DaffyTypeaheadProject/Resources/Storyboard/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		9E1D570F292383B1001E50FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../CineJournal/daffy-typeahead-project/DaffyTypeaheadProject/DaffyTypeaheadProject/Resources/Storyboard/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		9E1D571229238550001E50FE /* MovieReviewItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieReviewItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9E1D571329238550001E50FE /* MovieReviewItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieReviewItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9E1D57182923889C001E50FE /* MovieReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 		9E1D56E929237F85001E50FE /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9E1D57172923856D001E50FE /* MovieReviewItem */,
 				9E1D56FF29238170001E50FE /* ViewController */,
 				9E1D56FC2923813E001E50FE /* ViewModel */,
 				9E1D56F7292380B6001E50FE /* View */,
@@ -162,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				9E1D56FD2923815A001E50FE /* MovieViewModel.swift */,
+				9E1D57182923889C001E50FE /* MovieReviewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -176,6 +184,15 @@
 				9E1D5709292382F5001E50FE /* JournalEntryViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9E1D57172923856D001E50FE /* MovieReviewItem */ = {
+			isa = PBXGroup;
+			children = (
+				9E1D571229238550001E50FE /* MovieReviewItem+CoreDataClass.swift */,
+				9E1D571329238550001E50FE /* MovieReviewItem+CoreDataProperties.swift */,
+			);
+			path = MovieReviewItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +269,7 @@
 				9E1D56D729237EA2001E50FE /* ViewController.swift in Sources */,
 				9E1D56F9292380E0001E50FE /* JournalEntryTableViewCell.swift in Sources */,
 				9E1D56F329238045001E50FE /* MovieAPI.swift in Sources */,
+				9E1D571429238550001E50FE /* MovieReviewItem+CoreDataClass.swift in Sources */,
 				9E1D56FB29238125001E50FE /* MovieResultsTableViewCell.swift in Sources */,
 				9E1D5708292382D3001E50FE /* JournalViewController.swift in Sources */,
 				9E1D570529238202001E50FE /* MovieDetailViewController.swift in Sources */,
@@ -259,7 +277,9 @@
 				9E1D56D329237EA2001E50FE /* AppDelegate.swift in Sources */,
 				9E1D56DD29237EA2001E50FE /* CineJournal.xcdatamodeld in Sources */,
 				9E1D5703292381C5001E50FE /* MoviewReviewViewController.swift in Sources */,
+				9E1D571529238550001E50FE /* MovieReviewItem+CoreDataProperties.swift in Sources */,
 				9E1D56D529237EA2001E50FE /* SceneDelegate.swift in Sources */,
+				9E1D57192923889C001E50FE /* MovieReviewViewModel.swift in Sources */,
 				9E1D56FE2923815A001E50FE /* MovieViewModel.swift in Sources */,
 				9E1D56ED29237FAB001E50FE /* Movie.swift in Sources */,
 				9E1D56F62923807E001E50FE /* MovieDataProvider.swift in Sources */,

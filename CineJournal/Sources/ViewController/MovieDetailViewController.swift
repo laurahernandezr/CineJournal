@@ -59,6 +59,7 @@ class MovieDetailViewController: UIViewController {
     }
     @objc func addReviewButtonTapped() {
         let movieReviewViewController = self.storyboard?.instantiateViewController(withIdentifier: "MovieReviewViewController") as! MovieReviewViewController
+        movieReviewViewController.movieViewModel = movieViewModel
         self.navigationController?.pushViewController(movieReviewViewController, animated: true)
     }
 }

@@ -14,12 +14,11 @@ class JournalEntryTableViewCell: UITableViewCell {
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var moviePosterUIImageView: UIImageView!
     
-    var movieViewModel: MovieViewModel! {
+    var movieReview: MovieReviewItem! {
         didSet{
-            if let movie = movieViewModel.movie {
-                movieTitleLabel.text = movie.movieTitle
-//                reviewScoreLabel.text =
-            }
+                movieTitleLabel.text = movieReview.movieTitle
+                reviewScoreLabel.text = String(movieReview.movieScore)
+                reviewLabel.text = movieReview.movieReview
         }
     }
 }
