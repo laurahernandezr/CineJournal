@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Journal" translatesAutoresizingMaskIntoConstraints="NO" id="Cpl-ft-RW8">
+                                <rect key="frame" x="31" y="201" width="331" height="420"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CineJournal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smD-hw-dfH">
+                                <rect key="frame" x="131" y="509" width="130" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.094117648900000003" green="0.094117648900000003" blue="0.094117648900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Cpl-ft-RW8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="142" id="1Si-x5-lIj"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Cpl-ft-RW8" secondAttribute="bottom" constant="197" id="2Jl-uA-Q58"/>
+                            <constraint firstItem="smD-hw-dfH" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="450" id="Hij-jj-ics"/>
+                            <constraint firstItem="Cpl-ft-RW8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="31" id="JBv-kR-w6O"/>
+                            <constraint firstItem="smD-hw-dfH" firstAttribute="centerX" secondItem="Cpl-ft-RW8" secondAttribute="centerX" id="TVI-5V-PZ4"/>
+                            <constraint firstItem="Cpl-ft-RW8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="gkQ-d0-n7r"/>
+                            <constraint firstItem="smD-hw-dfH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="131" id="ziU-zx-vRp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61.832061068702288" y="-28.169014084507044"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Journal" width="579" height="600"/>
+    </resources>
+</document>
