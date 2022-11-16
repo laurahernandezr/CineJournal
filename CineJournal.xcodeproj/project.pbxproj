@@ -22,11 +22,11 @@
 		9E1D5703292381C5001E50FE /* MoviewReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1D5702292381C5001E50FE /* MoviewReviewViewController.swift */; };
 		9E1D570529238202001E50FE /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1D570429238202001E50FE /* MovieDetailViewController.swift */; };
 		9E1D5708292382D3001E50FE /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1D5707292382D3001E50FE /* JournalViewController.swift */; };
-		9E1D570D29238373001E50FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E1D570B29238373001E50FE /* Main.storyboard */; };
 		9E1D5710292383B1001E50FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E1D570E292383B1001E50FE /* LaunchScreen.storyboard */; };
 		9E1D571429238550001E50FE /* MovieReviewItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1D571229238550001E50FE /* MovieReviewItem+CoreDataClass.swift */; };
 		9E1D571529238550001E50FE /* MovieReviewItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1D571329238550001E50FE /* MovieReviewItem+CoreDataProperties.swift */; };
 		9E1D57192923889C001E50FE /* MovieReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1D57182923889C001E50FE /* MovieReviewViewModel.swift */; };
+		9E34D3DA29245DEB00BD51FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E34D3D929245DEB00BD51FF /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,11 +47,11 @@
 		9E1D5702292381C5001E50FE /* MoviewReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviewReviewViewController.swift; sourceTree = "<group>"; };
 		9E1D570429238202001E50FE /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		9E1D5707292382D3001E50FE /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
-		9E1D570C29238373001E50FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../CineJournal/daffy-typeahead-project/DaffyTypeaheadProject/DaffyTypeaheadProject/Resources/Storyboard/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		9E1D570F292383B1001E50FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../CineJournal/daffy-typeahead-project/DaffyTypeaheadProject/DaffyTypeaheadProject/Resources/Storyboard/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		9E1D571229238550001E50FE /* MovieReviewItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieReviewItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9E1D571329238550001E50FE /* MovieReviewItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieReviewItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9E1D57182923889C001E50FE /* MovieReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewViewModel.swift; sourceTree = "<group>"; };
+		9E34D3D929245DEB00BD51FF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				9E1D56E929237F85001E50FE /* Sources */,
-				9E1D570B29238373001E50FE /* Main.storyboard */,
 				9E1D56DE29237EA4001E50FE /* Assets.xcassets */,
 				9E1D570E292383B1001E50FE /* LaunchScreen.storyboard */,
+				9E34D3D929245DEB00BD51FF /* Main.storyboard */,
 				9E1D56E329237EA4001E50FE /* Info.plist */,
 				9E1D56DB29237EA2001E50FE /* CineJournal.xcdatamodeld */,
 			);
@@ -247,9 +247,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E34D3DA29245DEB00BD51FF /* Main.storyboard in Resources */,
 				9E1D5710292383B1001E50FE /* LaunchScreen.storyboard in Resources */,
 				9E1D56DF29237EA4001E50FE /* Assets.xcassets in Resources */,
-				9E1D570D29238373001E50FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,14 +283,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9E1D570B29238373001E50FE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9E1D570C29238373001E50FE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9E1D570E292383B1001E50FE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -19,6 +19,7 @@ class MovieReviewViewController: UIViewController {
         super.viewDidLoad()
         movieTitleLabel.text = movieViewModel.movie?.movieTitle
         reviewUITextView.layer.cornerRadius = 20
+        addToJournalButton.layer.cornerRadius = 20
         reviewUITextView.text = nil
         addToJournalButton.addTarget(self, action: #selector(addToJournalButtonPressed), for: .touchUpInside)
     }
